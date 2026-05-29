@@ -24,7 +24,7 @@ function CalendarPage() {
         const token = localStorage.getItem("token")
 
         // 🔥 Start BOTH at the same time
-        const fetchPromise = fetch("http://localhost:3000/tasks", {
+        const fetchPromise = fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -48,7 +48,7 @@ function CalendarPage() {
         setTasks(data)
 
       } catch (err) {
-        setError("Server unreachable. Check your connection.")
+        setError("Server unreachable. Check your connection.", err)
         setTasks([])
       } finally {
         setLoading(false)
@@ -74,7 +74,7 @@ function CalendarPage() {
     try {
       const token = localStorage.getItem("token")
   
-      const res = await fetch("http://localhost:3000/tasks", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -101,7 +101,7 @@ function CalendarPage() {
     try {
       const token = localStorage.getItem("token")
   
-      const res = await fetch(`http://localhost:3000/tasks/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -132,7 +132,7 @@ function CalendarPage() {
     try {
       const token = localStorage.getItem("token")
   
-      const res = await fetch(`http://localhost:3000/tasks/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`

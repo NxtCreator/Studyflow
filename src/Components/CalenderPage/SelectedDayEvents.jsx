@@ -80,7 +80,7 @@ function SelectedDayEvents({ selectedDate, tasks, onCreateTask, onUpdateTask, on
                                 title={task.title}
                                 subject={task.subject}
                                 time={task.dueTime}
-                                onDelete={() => onDeleteTask(task.id)}
+                                onDelete={() => onDeleteTask(task._id)}
                                 onEdit={() => {
                                     setEditingTask(task)
                                     setModalOpen(true)

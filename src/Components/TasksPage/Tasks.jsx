@@ -26,7 +26,7 @@ function Tasks() {
       try {
         const token = localStorage.getItem("token")
 
-        const res = await fetch("http://localhost:3000/tasks", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -50,7 +50,7 @@ function Tasks() {
   async function handleUpdateTask(taskId, updates) {
     try {
       const token = localStorage.getItem("token")
-      const res = await fetch(`http://localhost:3000/tasks/${taskId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/tasks/${taskId}`, {
         method: "PUT",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -105,7 +105,7 @@ function Tasks() {
       setTasks(updatedTasks)
 
       // Delete from backend
-      await fetch(`http://localhost:3000/tasks/${taskId}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/tasks/${taskId}`, {
         method: "DELETE",
         headers: {
           "Authorization": `Bearer ${token}`
@@ -113,7 +113,7 @@ function Tasks() {
       })
 
       // Sync new order
-      await fetch("http://localhost:3000/tasks/reorder", {
+      await fetch(`${import.meta.env.VITE_API_URL}/tasks/reorder`, {
         method: "PUT",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -263,7 +263,7 @@ function Tasks() {
 
     try {
       const token = localStorage.getItem("token")
-      const res = await fetch("http://localhost:3000/tasks", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -321,7 +321,7 @@ function Tasks() {
 
     try {
       const token = localStorage.getItem("token")
-      await fetch('http://localhost:3000/tasks/reorder', {
+      await fetch(`${import.meta.env.VITE_API_URL}/tasks/reorder`, {
         method: "PUT",
         headers: {
           "Authorization": `Bearer ${token}`,
