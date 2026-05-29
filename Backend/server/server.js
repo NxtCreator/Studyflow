@@ -5,6 +5,8 @@ import connectDB from "./config/db.js";
 import taskRoutes from "./routes/taskRoutes.js"
 import authRoutes from "./routes/authRoutes.js"
 
+const PORT = process.env.PORT || 3000;
+
 dotenv.config();
 
 connectDB()
@@ -22,6 +24,6 @@ app.get("/", (req, res) => {
     res.send("API is running...")
 });
 
-app.listen(3000, "0.0.0.0", () => {
-    console.log("Server is listening on port 3000")
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`)
 })
