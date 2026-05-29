@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* =========================================================
+   EMBER HEARTH DESIGN SYSTEM
+   ========================================================= */
+/* 
+  Orignal css
+  
+   @theme { 
+    --color-primary: #78350F; 
+    --color-secondary: #F59E0B; 
+    --color-chip: #FDE68A; 
+    --color-input: #F4F2FD; 
+    --color-button: #855300; 
+    --color-hover: #FEF3C7; 
+    --color-focus-card: #78350F; 
+  } */
+
+/* ---------------- LIGHT MODE ---------------- */
+
+:root {
+  /* Backgrounds */
+  --background: oklch(0.98 0.01 40);
+  --card: oklch(0.99 0.005 40);
+  --popover: oklch(0.99 0.005 40);
+
+  --secondary: oklch(0.96 0.01 40);
+  --sidebar: oklch(0.97 0.01 40);
+
+  --muted: oklch(0.92 0.01 40);
+  --input: oklch(0.88 0.01 40);
+  --border: oklch(0.88 0.01 40);
+
+  /* Text */
+  --foreground: oklch(0.12 0.02 40);
+  --card-foreground: oklch(0.12 0.02 40);
+  --popover-foreground: oklch(0.12 0.02 40);
+  --sidebar-foreground: oklch(0.12 0.02 40);
+
+  --secondary-foreground: oklch(0.25 0.02 40);
+  --muted-foreground: oklch(0.50 0.02 50);
+
+  /* Primary (Terracotta) */
+  --primary: oklch(0.55 0.16 35);
+  --primary-foreground: oklch(0.99 0 0);
+
+  /* Accent (Amber) */
+  --accent: oklch(0.60 0.15 60);
+  --accent-foreground: oklch(0.205 0 0);
+
+  /* Sidebar */
+  --sidebar-primary: oklch(0.55 0.16 35);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.93 0.01 35);
+  --sidebar-border: oklch(0.88 0.01 40);
+
+  /* Status colors */
+  --success: oklch(0.64 0.14 145);
+  --warning: oklch(0.60 0.15 60);
+  --destructive: oklch(0.55 0.18 25);
+  --info: oklch(0.65 0.12 240);
+  --muted-badge: oklch(0.92 0.02 250);
+
+  /* Radius */
+  --radius: 0.625rem;
+}
+
+
+/* ---------------- DARK MODE ---------------- */
+
+.dark {
+  --background: oklch(0.12 0.02 40);
+  --card: oklch(0.16 0.03 40);
+  --popover: oklch(0.16 0.03 40);
+
+  --secondary: oklch(0.20 0.03 40);
+  --sidebar: oklch(0.14 0.02 40);
+
+  --muted: oklch(0.22 0.03 40);
+  --input: oklch(0.24 0.03 40);
+  --border: oklch(0.24 0.03 40);
+
+  --foreground: oklch(0.96 0.01 40);
+  --card-foreground: oklch(0.96 0.01 40);
+  --popover-foreground: oklch(0.96 0.01 40);
+  --sidebar-foreground: oklch(0.96 0.01 40);
+
+  --secondary-foreground: oklch(0.96 0.01 40);
+  --muted-foreground: oklch(0.62 0.02 50);
+
+  --primary: oklch(0.62 0.18 35);
+  --accent: oklch(0.65 0.16 60);
+
+  --destructive: oklch(0.60 0.20 25);
+
+  --sidebar-primary: oklch(0.62 0.18 35);
+  --sidebar-accent: oklch(0.22 0.04 35);
+  --sidebar-border: oklch(0.26 0.03 40);
+}
+
+
+/* =========================================================
+   TAILWIND THEME MAPPING
+   ========================================================= */
+
+@theme {
+
+  /* Backgrounds */
+  --color-background: var(--background);
+  --color-card: var(--card);
+  --color-popover: var(--popover);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-sidebar: var(--sidebar);
+
+  /* Borders & inputs */
+  --color-border: var(--border);
+  --color-input: var(--input);
+
+  /* Text */
+  --color-foreground: var(--foreground);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  /* Brand colors */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Status */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+  --color-info: var(--info);
+  --color-muted-badge: var(--muted-badge);
+
+  /* Sidebar */
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-border: var(--sidebar-border);
+
+  /* Radius */
+  --radius: var(--radius);
+}
+
+
+/* =========================================================
+   GLOBAL STYLES
+   ========================================================= */
+
+/*
+  ==============
+  CAUSES OVERIDE
+  ============== 
+
+  * {
+    border-color: var(--border);
+  } 
+*/
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+
+/* Smooth theme transitions */
+
+body,
+button,
+input {
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
